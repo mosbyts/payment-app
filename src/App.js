@@ -1,6 +1,6 @@
 //Necessary dependencies, data and components.
 import React, { useState, useEffect, Fragment } from 'react'
-import Card from './components/Card/Card.js'
+import DisplayCard from './components/displayCard/displayCard.js'
 import Pagination from './components/Pagination/Pagination'
 import Navbar from './components/Navbar/Navbar'
 import Data from './utils/sample.json'
@@ -36,7 +36,6 @@ const App = () => {
   //Get current cards
   const indexOfLastCard = currentPage * cardsPerPage
   const indexOfFirstCard = indexOfLastCard - cardsPerPage
-  let currentCard;
   const getCurrentCards = _ => {
     const currentCard = cards.slice(indexOfFirstCard, indexOfLastCard)
     return setCardsToRender(currentCard)
@@ -45,24 +44,34 @@ const App = () => {
   //Change page
   const paginate = pageNumber => setCurrentPage(pageNumber)
 
-  //Sort cards
-  const sortCards = _ => {
-    let sortedCards = cards.sort((a, b) => {
+  //Sort cards by most recent date
+  const sortDescCards = _ => {
+    let sortedDescCards = cards.sort((a, b) => {
       return a.Payee.SubmissionDate < b.Payee.SubmissionDate ? 1 : -1;
     })
-    setCards(sortedCards);
+    setCards(sortedDescCards);
     getCurrentCards();
   }
+
+    //Sort cards by least recent date
+    const sortAscCards = _ => {
+      let sortedAscCards = cards.sort((a, b) => {
+        return a.Payee.SubmissionDate > b.Payee.SubmissionDate ? 1 : -1;
+      })
+      setCards(sortedAscCards);
+      getCurrentCards();
+    }
 
   return(
     <Fragment>
       <Navbar />
-      <Card 
+      <DisplayCard 
         cards={cardsToRender} 
         loading={loading} 
       />
       <Pagination 
-        sortCards={sortCards}
+        sortDescCards={sortDescCards}
+        sortAscCards={sortAscCards}
         cardsPerPage={cardsPerPage} 
         totalCards={cards.length}
         paginate={paginate}

@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
+import { Menu } from 'semantic-ui-react'
+import './style.css'
 import Logo from './logo.png'
 
-export default class Header extends Component {
+export default class Navbar extends Component {
     render(){
         return(
-            <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-                <img src={Logo} alt="Paymerang Logo" />
-            </nav>
+            <Menu className='navbar'>
+                <Menu.Item>
+                    <img src={Logo} alt='Paymerang Logo'></img>
+                </Menu.Item>
+            </Menu>
         )
     }
 }

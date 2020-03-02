@@ -1,7 +1,9 @@
 import React from 'react'
+import './style.css'
 
 const Pagination = ({
-    sortCards,
+    sortDescCards,
+    sortAscCards,
     cardsPerPage,
     totalCards,
     paginate }) => {
@@ -12,17 +14,18 @@ const Pagination = ({
     }
 
     return(
-        <div>
-            <button onClick={e => sortCards(e, sortCards)}>Sort By Date</button>
-            <ul className='pagination'>
-                {pageNumbers.map(number => (
-                    <li key={number} className='page-item'>
-                        <a onClick={() => paginate(number)} href="!#" className='page-link'>
-                            {number}
-                        </a>
-                    </li>
-                ))}
-            </ul>
+        <div className='paginationDiv'>
+            <button onClick={e => sortDescCards(e, sortDescCards)}>Most Recent</button>
+            <button onClick={e => sortAscCards(e, sortAscCards)}>Oldest</button> 
+                <ul className='pagination'>
+                    {pageNumbers.map(number => (
+                        <li key={number} className='page-item'>
+                            <a onClick={() => paginate(number)} href="!#" className='page-link'>
+                                {number}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
         </div>
     )
 }
