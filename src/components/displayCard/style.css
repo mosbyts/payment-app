@@ -1,7 +1,12 @@
+.cardHolderDiv{
+    display: block;
+    margin: auto;
+}
+
 .cards{
     box-shadow: 0 4px 8px 0#dfdfdf, 0 6px 20px 0 #dfdfdf;
-    margin: 80px;
-    padding: 50px;
+    margin: 100px;
+    padding: 90px;
 }
 
 .cardHeader{

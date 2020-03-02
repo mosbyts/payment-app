@@ -14,14 +14,14 @@ const displayCard = ({ cards, loading }) => {
             {cards.map((card, index) => {
                 const { Payee, Payment, Remittance } = card;
                 return(
-                    <Grid className='cards'>
+                    <Grid columns={3} className='cards'>
                         <Grid.Row>
                             <Grid.Column className='payeeCard'>
                                 <h4 className='cardHeader'>Vendor Information</h4>
                                 <hr></hr>
                                 <h5>{Payee.Name}</h5>
-                                <p>Fax: {Payee.Fax}</p>
-                                <p>Phone: {Payee.Phone}</p>
+                                <p><strong>Fax:</strong> {Payee.Fax}</p>
+                                <p><strong>Phone:</strong> {Payee.Phone}</p>
                                 <p>{Payee.Address.Address1} {Payee.Address.Address2}</p>
                                 <p>{Payee.Address.City}, {Payee.Address.StateOrProvince} {Payee.Address.PostalCode}</p>
                                 <p>{Payee.Address.Country}</p>
@@ -31,7 +31,7 @@ const displayCard = ({ cards, loading }) => {
                                 <div className='promotionCard'>
                                     <h4 className='cardHeader'>Need Help?</h4>
                                     <hr></hr>
-                                    <p>Contact us for additional assistance.</p>
+                                    <p><strong>Contact us for additional assistance.</strong></p>
                                     <p>7401 Beaufont Springs Drive, Suite 300</p>
                                     <p>Richmond, VA 23225</p>
                                     <a href='tel:877-680-7332'>(877) 680-7332</a>
@@ -43,11 +43,11 @@ const displayCard = ({ cards, loading }) => {
                             <Grid.Column className='paymentCard'>
                                 <h4 className='cardHeader'>Payment Information</h4>
                                 <hr></hr>
-                                <p>Attention: {Payee.Attention}</p>
-                                <p>Submission Date: {Payee.SubmissionDate}</p>
-                                <p>Permanent Account Number: {Payment.PAN}</p>
-                                <p>CVV: {Payment.CVV}</p>
-                                <p>Expiration Date: {Payment.Exp}</p>
+                                <p><strong>Attention:</strong> {Payee.Attention}</p>
+                                <p><strong>Submission Date:</strong> {Payee.SubmissionDate}</p>
+                                <p><strong>Permanent Account Number:</strong> {Payment.PAN}</p>
+                                <p><strong>CVV:</strong> {Payment.CVV}</p>
+                                <p><strong>Expiration Date:</strong> {Payment.Exp}</p>
                             </Grid.Column>
                         </Grid.Row>
                                             

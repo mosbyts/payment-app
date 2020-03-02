@@ -1,6 +1,6 @@
 //Necessary dependencies, data and components.
 import React, { useState, useEffect, Fragment } from 'react'
-import DisplayCard from './components/displayCard/displayCard.js'
+import DisplayCard from './components/DisplayCard/DisplayCard.js'
 import Pagination from './components/Pagination/Pagination'
 import Navbar from './components/Navbar/Navbar'
 import Data from './utils/sample.json'
@@ -65,16 +65,16 @@ const App = () => {
   return(
     <Fragment>
       <Navbar />
-      <DisplayCard 
-        cards={cardsToRender} 
-        loading={loading} 
-      />
       <Pagination 
         sortDescCards={sortDescCards}
         sortAscCards={sortAscCards}
         cardsPerPage={cardsPerPage} 
         totalCards={cards.length}
         paginate={paginate}
+      />
+      <DisplayCard 
+        cards={cardsToRender} 
+        loading={loading} 
       />
       <Footer />
     </Fragment>

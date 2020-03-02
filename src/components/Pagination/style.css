@@ -1,5 +1,13 @@
 .paginationDiv{
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 50px;
+}
+
+button{
+    margin: 5px;
+}
+
+ul{
+    display: block;
+    margin: auto;
+    width: 175px;
 }
