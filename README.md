@@ -1,5 +1,8 @@
 # paymerang-coding-challenge
 
+## Using The App
+Download the necessary dependencies by opening Git in the project's folder and running 'npm i' then 'npm start'.
+
 ## Challenge
 As you know, we make payments on behalf of our clients. We like to be able to display the payment details in a clear, concise manner for our employees, who are responsible for ensuring the vendors receive the payments.
 
