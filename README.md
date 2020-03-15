@@ -1,4 +1,4 @@
-# paymerang-coding-challenge
+# payment-app
 
 ## Using The App
 Download the necessary dependencies by opening Git in the project's folder and running 'npm i' then 'npm start'.
